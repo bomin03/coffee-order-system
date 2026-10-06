@@ -14,7 +14,7 @@ import java.util.List;
 @Transactional(readOnly = true)
 public class MenuService {
 
-    private final MenuRepository menuRepository;현
+    private final MenuRepository menuRepository;
 
     public List<MenuResponse> getMenus() {
         return menuRepository.findAll(Sort.by("id")).stream()
