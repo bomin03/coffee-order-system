@@ -36,7 +36,7 @@ public class UserPoint extends BaseTimeEntity {
         return new UserPoint(userId);
     }
 
-    public static void charge(long amount) {
+    public void charge(long amount) {
         if (amount <= 0) {
             throw new BusinessException(ErrorCode.INVALID_REQUEST);
         }
@@ -46,7 +46,7 @@ public class UserPoint extends BaseTimeEntity {
         this.balance += amount;
     }
 
-    public static void use(long amount) {
+    public void use(long amount) {
         if (amount <= 0) {
             throw new BusinessException(ErrorCode.INVALID_REQUEST);
         }

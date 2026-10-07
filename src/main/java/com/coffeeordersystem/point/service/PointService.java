@@ -21,7 +21,7 @@ public class PointService {
     @Transactional
     public PointChargeResponse charge(Long userId, long amount) {
         UserPoint userPoint = getUserPoint(userId);
-        UserPoint.charge(amount);
+        userPoint.charge(amount);
         pointHistoryRepository.save(PointHistory.charge(userId, amount, userPoint.getBalance()));
         return new PointChargeResponse(userId, amount, userPoint.getBalance());
     }
@@ -29,7 +29,7 @@ public class PointService {
     @Transactional
     public long use(Long userId, Long orderId, long amount) {
         UserPoint userPoint = getUserPoint(userId);
-        UserPoint.use(amount);
+        userPoint.use(amount);
         pointHistoryRepository.save(PointHistory.use(userId, orderId, amount, userPoint.getBalance()));
         return userPoint.getBalance();
     }

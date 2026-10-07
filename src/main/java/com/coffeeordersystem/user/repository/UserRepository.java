@@ -1,6 +1,6 @@
 package com.coffeeordersystem.user.repository;
 
-import org.apache.catalina.User;
+import com.coffeeordersystem.user.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, Long> {

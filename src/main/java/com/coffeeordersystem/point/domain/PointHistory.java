@@ -47,7 +47,7 @@ public class PointHistory extends BaseTimeEntity {
         return new PointHistory(userId, null, PointHistoryType.CHARGE, amount, balanceAfter);
     }
 
-    public static PointHistory use(Long userId, Long ordrId, long amount, long balanceAfter) {
+    public static PointHistory use(Long userId, Long orderId, long amount, long balanceAfter) {
         return new PointHistory(userId, orderId, PointHistoryType.USE, amount, balanceAfter);
     }
 
